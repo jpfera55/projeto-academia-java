@@ -34,6 +34,11 @@ public class Academia extends javax.swing.JFrame {
         Cadastro.setText("Novo Cadastro");
 
         jButton2.setText("Acompanhar aluno");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -75,6 +80,13 @@ public class Academia extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // new novoform().setVisible(true); aciona o form novo 
+        //this.dispose(); fecha o form atual
+        new Acompanhamento_Aluno().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
