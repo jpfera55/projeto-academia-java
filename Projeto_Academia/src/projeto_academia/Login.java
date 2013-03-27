@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  * @author aluno
  */
 public class Login extends javax.swing.JFrame {
+    private int ERROR_MESSAGE;
 
     /**
      * Creates new form Login
@@ -120,9 +121,12 @@ public class Login extends javax.swing.JFrame {
 String nome = (jTextField1.getText());
 String senha = (jPasswordField1.getText());
 if (nome.equals("root")&& senha.equals("root")){
+    new Cadastro_aluno ().setVisible(true);
+    dispose();
 }else {
-    JOptionPane.showMessageDialog(null, "Favor verificar usuário e senha...");
+    JOptionPane.showMessageDialog(null, "Favor verificar usuário e senha....", "Atenção", ERROR_MESSAGE);
 }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
