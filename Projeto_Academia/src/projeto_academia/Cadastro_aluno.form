@@ -197,10 +197,12 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jToggleButton1" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jToggleButton2" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="jToggleButton3" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jToggleButton1" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="jToggleButton3" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace pref="61" max="32767" attributes="0"/>
                       </Group>
