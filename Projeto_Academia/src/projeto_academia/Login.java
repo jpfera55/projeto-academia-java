@@ -1,5 +1,6 @@
 package projeto_academia;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /*
@@ -48,6 +49,11 @@ public class Login extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
             }
         });
 
@@ -119,7 +125,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 String nome = (jTextField1.getText());
-String senha = (jPasswordField1.getText());
+String senha = new String( jPasswordField1.getPassword());
 if (nome.equals("root")&& senha.equals("root")){
     new Cadastro_aluno ().setVisible(true);
     dispose();
@@ -135,6 +141,12 @@ jPasswordField1.setText (null);
 
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+      if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+      jButton1ActionPerformed(null);
+      }
+    }//GEN-LAST:event_jButton1KeyPressed
 
     /**
      * @param args the command line arguments
