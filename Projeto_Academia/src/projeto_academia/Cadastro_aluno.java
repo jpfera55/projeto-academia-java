@@ -482,6 +482,7 @@ jTextField4.setText(null);
 jTextField5.setText(null);        
 jTextField6.setText(null);        
 jTextField7.setText(null);        
+Altura.setText(null);        
 jCheckBox1.setSelected(false);
 jCheckBox2.setSelected(false);
 jCheckBox3.setSelected(false);
@@ -494,6 +495,9 @@ jCheckBox10.setSelected(false);
 jFormattedTextField4.setText(null);
 jFormattedTextField2.setText(null);
 jFormattedTextField3.setText(null);
+jFormattedTextField5.setText(null);
+jRadioButton1.setSelected(false);
+jRadioButton2.setSelected(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
