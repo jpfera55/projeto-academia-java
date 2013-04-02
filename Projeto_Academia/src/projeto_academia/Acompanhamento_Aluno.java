@@ -1,5 +1,11 @@
 package projeto_academia;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -14,10 +20,16 @@ public class Acompanhamento_Aluno extends javax.swing.JFrame {
     /**
      * Creates new form Acompanhamento_Aluno
      */
-    public Acompanhamento_Aluno() {
+    public Acompanhamento_Aluno() throws ClassNotFoundException {
         initComponents();
+        try {
+            Conexao.conectar("root", "root");
+            System.out.println("Conectado");
+        } catch (SQLException ex) {
+            System.out.println("Erro ao conectar");    ;
+        
     }
-
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,7 +43,7 @@ public class Acompanhamento_Aluno extends javax.swing.JFrame {
         Nome = new javax.swing.JLabel();
         Cx_Texto_Nome = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Matricula = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -100,7 +112,7 @@ public class Acompanhamento_Aluno extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Matricula, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton2)
@@ -118,7 +130,7 @@ public class Acompanhamento_Aluno extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Matricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -144,7 +156,22 @@ public class Acompanhamento_Aluno extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    model.setRowCount (0);
+    String sql = "SELECT * FROM CADASTRO_ALUNO" +
+            "WHERE NOME LIKE '%" + Cx_Texto_Nome.getText() + "%'";
+    try {
+    ResultSet rs = Conexao.ConexaoJDBC.createStatement().executeQuery(sql);
+        
+            while (rs.next()) {
+                model.addRow(new Object[]{
+                    rs.getInt(""),
+                    rs.getString("NOME")
+                });
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Acompanhamento_Aluno.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -187,12 +214,17 @@ new Academia().setVisible(true);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Acompanhamento_Aluno().setVisible(true);
+                try {
+                    new Acompanhamento_Aluno().setVisible(true);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Acompanhamento_Aluno.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Cx_Texto_Nome;
+    private javax.swing.JTextField Matricula;
     private javax.swing.JLabel Nome;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -200,6 +232,5 @@ new Academia().setVisible(true);
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
