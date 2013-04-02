@@ -1,5 +1,8 @@
 package projeto_academia;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -98,9 +101,13 @@ public class Academia extends javax.swing.JFrame {
 
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // new novoform().setVisible(true); aciona o form novo 
-        //this.dispose(); fecha o form atual
-        new Acompanhamento_Aluno().setVisible(true);
+        try {
+            // new novoform().setVisible(true); aciona o form novo 
+            //this.dispose(); fecha o form atual
+            new Acompanhamento_Aluno().setVisible(true);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Academia.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
