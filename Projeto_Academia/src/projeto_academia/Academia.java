@@ -93,10 +93,14 @@ public class Academia extends javax.swing.JFrame {
 
 
     private void CadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroActionPerformed
- // new novoform().setVisible (true); aciona o form novo 
-        //this.dispose();fecha o form atual
-        new Cadastro_aluno().setVisible (true);
-        this.dispose();
+        try {
+            // new novoform().setVisible (true); aciona o form novo 
+                   //this.dispose();fecha o form atual
+                   new Cadastro_aluno().setVisible (true);
+                   this.dispose();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Academia.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_CadastroActionPerformed
 
 

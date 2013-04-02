@@ -165,7 +165,7 @@ public class Acompanhamento_Aluno extends javax.swing.JFrame {
         
             while (rs.next()) {
                 model.addRow(new Object[]{
-                    rs.getInt(""),
+                    rs.getInt("Matricula"),
                     rs.getString("NOME")
                 });
             }
@@ -180,7 +180,11 @@ new Academia().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-      new Cadastro_aluno().setVisible(true);
+        try {
+            new Cadastro_aluno().setVisible(true);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Acompanhamento_Aluno.class.getName()).log(Level.SEVERE, null, ex);
+        }
       this.dispose();
     }//GEN-LAST:event_jTable1MouseClicked
 

@@ -1,6 +1,11 @@
 package projeto_academia;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /* * To change this template, choose Tools | Templates
  * and open the template in the editor.
  *//**
@@ -12,8 +17,15 @@ public class Cadastro_aluno extends javax.swing.JFrame {
     /**
      * Creates new form Cadastro_aluno
      */
-    public Cadastro_aluno() {
+    public Cadastro_aluno() throws ClassNotFoundException {
         initComponents();
+        try {
+            Conexao.conectar("root", "root");
+            System.out.println("Conectado");
+        } catch (SQLException ex) {
+            System.out.println("Erro ao conectar");    ;
+        
+    }
     }
 
     /**
@@ -47,11 +59,10 @@ public class Cadastro_aluno extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        Altura = new javax.swing.JTextField();
+        txt_Altura = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel15 = new javax.swing.JLabel();
         jCheckBox2 = new javax.swing.JCheckBox();
@@ -123,9 +134,6 @@ public class Cadastro_aluno extends javax.swing.JFrame {
         jLabel4.setText("Data de Nascimento:");
 
         jLabel11.setText("Ficha");
-
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/Sem título.jpg"))); // NOI18N
-        jLabel18.setText("jLabel18");
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
@@ -202,7 +210,7 @@ public class Cadastro_aluno extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Altura, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_Altura, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -232,7 +240,7 @@ public class Cadastro_aluno extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(Altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_Altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4)
@@ -285,6 +293,11 @@ public class Cadastro_aluno extends javax.swing.JFrame {
         }
 
         jButton1.setText("Cadastrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Limpar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -294,6 +307,11 @@ public class Cadastro_aluno extends javax.swing.JFrame {
         });
 
         jButton3.setText("Voltar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -350,7 +368,7 @@ public class Cadastro_aluno extends javax.swing.JFrame {
                                 .addComponent(jLabel17)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jFormattedTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -369,9 +387,7 @@ public class Cadastro_aluno extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
@@ -418,9 +434,7 @@ public class Cadastro_aluno extends javax.swing.JFrame {
                         .addComponent(jLabel11))
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -474,7 +488,7 @@ jTextField3.setText(null);
 jTextField4.setText(null);        
 jTextField5.setText(null);        
 jTextField6.setText(null);             
-Altura.setText(null);        
+txt_Altura.setText(null);        
 jCheckBox1.setSelected(false);
 jCheckBox2.setSelected(false);
 jCheckBox3.setSelected(false);
@@ -496,14 +510,101 @@ buttonGroup1.clearSelection();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-DecimalFormat dc = new DecimalFormat("###.#");
-        double altura = Double.valueOf(Altura.getText());
+DecimalFormat dc = new DecimalFormat("##.#");
+        double altura = Double.valueOf(txt_Altura.getText());
 double peso = Double.valueOf(jTextField6.getText());
 double imc_altura = altura*altura ;
 double imc = peso / imc_altura;
 String imc2=dc.format(imc);
 jLabel14.setText(imc2);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      String NomeAluno=jTextField1.getText();  
+      String Data_de_Nascimento=jFormattedTextField5.getText();  
+      String RG=jFormattedTextField3.getText();  
+      String CPF=jFormattedTextField4.getText();  
+      
+      String SexoAluno="";  
+      if(jRadioButton1.isSelected()){
+      SexoAluno=jRadioButton1.getText();
+      }
+      if(jRadioButton2.isSelected()){
+      SexoAluno=jRadioButton2.getText();
+      }
+      String Endereco=jTextField2.getText();  
+      String Complemento=jTextField3.getText();  
+      String Bairro=jTextField5.getText();  
+      String Cidade=jTextField4.getText();  
+      String Estado=(String) jComboBox1.getSelectedItem();  
+      String CEP=jFormattedTextField2.getText();  
+      String Altura= txt_Altura.getText();  
+      String Peso=jTextField6.getText();  
+      
+      try {  
+                PreparedStatement ps =Conexao.ConexaoJDBC.prepareStatement
+                        ("INSERT INTO cadastro_aluno VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                ps.setString(1, null);
+                ps.setString(2,NomeAluno);
+                ps.setString(3,Data_de_Nascimento );
+                ps.setString(4,RG );
+                ps.setString(5,CPF );
+                ps.setString(6,SexoAluno );
+                ps.setString(7,Endereco );
+                ps.setString(8,Complemento );
+                ps.setString(9,Bairro );
+                ps.setString(10,Cidade );
+                ps.setString(11,Estado );
+                ps.setString(12,CEP );
+                ps.setString(13,Altura );
+                ps.setString(14,Peso );
+                ps.execute();
+                JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso","Cadastro",JOptionPane.INFORMATION_MESSAGE);
+                
+                
+                
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(this,"Erro ao cadastrar Aluno "+ ex.getMessage(),"ERRO",JOptionPane.ERROR_MESSAGE);
+            }
+      String Jump = jCheckBox8.getText();
+      String Step = jCheckBox7.getText();
+      String Danca = jCheckBox6.getText();
+      String Box = jCheckBox5.getText();
+      String Muay_Thai = jCheckBox4.getText();
+      String Natacao = jCheckBox3.getText();
+      String Hidroginastica = jCheckBox2.getText();
+      String Musculacao = jCheckBox1.getText();
+      String Spinning = jCheckBox10.getText();
+      
+       try {  
+                PreparedStatement ps =Conexao.ConexaoJDBC.prepareStatement
+                        ("INSERT INTO atividades VALUES (?,?,?,?,?,?,?,?,?)");
+                ps.setString(1, Jump);
+                ps.setString(2,Step);
+                ps.setString(3,Danca );
+                ps.setString(4,Box );
+                ps.setString(5,Muay_Thai );
+                ps.setString(6,Natacao );
+                ps.setString(7,Hidroginastica );
+                ps.setString(8,Musculacao );
+                ps.setString(9,Spinning );
+               // ps.setString(10,null );
+                
+                
+                ps.execute();
+                JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso","Cadastro",JOptionPane.INFORMATION_MESSAGE);
+                
+                
+                
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(this,"Erro ao cadastrar Aluno "+ ex.getMessage(),"ERRO",JOptionPane.ERROR_MESSAGE);
+            }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       new Academia().setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -535,12 +636,15 @@ jLabel14.setText(imc2);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cadastro_aluno().setVisible(true);
+                try {
+                    new Cadastro_aluno().setVisible(true);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Cadastro_aluno.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Altura;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -569,7 +673,6 @@ jLabel14.setText(imc2);
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -589,5 +692,6 @@ jLabel14.setText(imc2);
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField txt_Altura;
     // End of variables declaration//GEN-END:variables
 }
