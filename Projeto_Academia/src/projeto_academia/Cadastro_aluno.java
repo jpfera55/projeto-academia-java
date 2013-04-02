@@ -448,7 +448,7 @@ public class Cadastro_aluno extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox6ActionPerformed
 
     private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jCheckBox8ActionPerformed
 
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
