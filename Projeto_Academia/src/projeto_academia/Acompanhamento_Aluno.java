@@ -64,22 +64,12 @@ public class Acompanhamento_Aluno extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nome", "Matrícula"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jTable1.getTableHeader().setReorderingAllowed(false);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -158,15 +148,16 @@ public class Acompanhamento_Aluno extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
     model.setRowCount (0);
-    String sql = "SELECT * FROM CADASTRO_ALUNO" +
-            "WHERE NOME LIKE '%" + Cx_Texto_Nome.getText() + "%'";
+    String nome=Cx_Texto_Nome.getText();
+    String sql = "select *from cadastro_aluno"; //+
+            //"WHERE nome LIKE '%"+ nome+"%'";
     try {
     ResultSet rs = Conexao.ConexaoJDBC.createStatement().executeQuery(sql);
         
             while (rs.next()) {
                 model.addRow(new Object[]{
                     rs.getInt("Matricula"),
-                    rs.getString("NOME")
+                    rs.getString("Nome")
                 });
             }
         } catch (SQLException ex) {

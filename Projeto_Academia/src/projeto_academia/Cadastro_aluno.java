@@ -520,7 +520,7 @@ jLabel14.setText(imc2);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      String NomeAluno=jTextField1.getText();  
+      String Nome=jTextField1.getText();  
       String Data_de_Nascimento=jFormattedTextField5.getText();  
       String RG=jFormattedTextField3.getText();  
       String CPF=jFormattedTextField4.getText();  
@@ -545,7 +545,7 @@ jLabel14.setText(imc2);
                 PreparedStatement ps =Conexao.ConexaoJDBC.prepareStatement
                         ("INSERT INTO cadastro_aluno VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
                 ps.setString(1, null);
-                ps.setString(2,NomeAluno);
+                ps.setString(2,Nome);
                 ps.setString(3,Data_de_Nascimento );
                 ps.setString(4,RG );
                 ps.setString(5,CPF );
