@@ -88,7 +88,8 @@ public class Academia extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pack();
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-364)/2, (screenSize.height-148)/2, 364, 148);
     }// </editor-fold>//GEN-END:initComponents
 
 

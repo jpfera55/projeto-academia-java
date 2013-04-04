@@ -49,9 +49,6 @@ public class Cadastro_aluno extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        txt_Altura = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel15 = new javax.swing.JLabel();
         jCheckBox2 = new javax.swing.JCheckBox();
@@ -62,9 +59,6 @@ public class Cadastro_aluno extends javax.swing.JFrame {
         jCheckBox7 = new javax.swing.JCheckBox();
         jCheckBox8 = new javax.swing.JCheckBox();
         jCheckBox10 = new javax.swing.JCheckBox();
-        jTextField6 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jFormattedTextField3 = new javax.swing.JFormattedTextField();
         jLabel17 = new javax.swing.JLabel();
@@ -74,7 +68,7 @@ public class Cadastro_aluno extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -105,10 +99,6 @@ public class Cadastro_aluno extends javax.swing.JFrame {
         jLabel11.setText("Ficha");
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        jLabel12.setText("Altura:");
-
-        jLabel13.setText("Peso:");
 
         jCheckBox1.setText("Musculação");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -150,21 +140,6 @@ public class Cadastro_aluno extends javax.swing.JFrame {
 
         jCheckBox10.setText("Spinning");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Calcular");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
-        jLabel14.setText("...");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -175,43 +150,22 @@ public class Cadastro_aluno extends javax.swing.JFrame {
                     .addComponent(jCheckBox3)
                     .addComponent(jCheckBox2)
                     .addComponent(jLabel15)
-                    .addComponent(jCheckBox1)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_Altura, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                    .addComponent(jCheckBox1))
+                .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jCheckBox4)
                     .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox6)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                    .addComponent(jCheckBox6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jCheckBox7)
                     .addComponent(jCheckBox8)
-                    .addComponent(jCheckBox10)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel14)))
-                .addGap(0, 39, Short.MAX_VALUE))
+                    .addComponent(jCheckBox10)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txt_Altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4)
-                    .addComponent(jLabel14))
-                .addGap(18, 18, 18)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -227,8 +181,7 @@ public class Cadastro_aluno extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox3)
                     .addComponent(jCheckBox6)
-                    .addComponent(jCheckBox10))
-                .addContainerGap())
+                    .addComponent(jCheckBox10)))
         );
 
         jLabel16.setText("RG: ");
@@ -281,6 +234,12 @@ public class Cadastro_aluno extends javax.swing.JFrame {
 
         jLabel18.setText("Telefone: ");
 
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -290,7 +249,6 @@ public class Cadastro_aluno extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -299,38 +257,43 @@ public class Cadastro_aluno extends javax.swing.JFrame {
                                 .addComponent(jLabel16)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jFormattedTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel17)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton2)))
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator1)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jLabel17)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jRadioButton1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jRadioButton2)))))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel18)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(48, 48, 48)
                                 .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jFormattedTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(54, 54, 54)
-                                .addComponent(jButton2)
-                                .addGap(54, 54, 54)
-                                .addComponent(jButton3))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(jLabel11))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jButton1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton2)
+                                    .addGap(66, 66, 66)
+                                    .addComponent(jButton3))
+                                .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 109, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,14 +314,14 @@ public class Cadastro_aluno extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(jFormattedTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFormattedTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
-                .addGap(11, 11, 11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -368,154 +331,130 @@ public class Cadastro_aluno extends javax.swing.JFrame {
                 .addGap(139, 139, 139))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 350));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 290));
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-534)/2, (screenSize.height-406)/2, 534, 406);
+        setBounds((screenSize.width-536)/2, (screenSize.height-341)/2, 536, 341);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new Academia().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jTextField1.setText(null);
 
-    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox6ActionPerformed
+       
+        jCheckBox1.setSelected(false);
+        jCheckBox2.setSelected(false);
+        jCheckBox3.setSelected(false);
+        jCheckBox4.setSelected(false);
+        jCheckBox5.setSelected(false);
+        jCheckBox6.setSelected(false);
+        jCheckBox7.setSelected(false);
+        jCheckBox8.setSelected(false);
+        jCheckBox10.setSelected(false);
+        jFormattedTextField4.setText(null);
 
-    private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
+        jFormattedTextField3.setText(null);
+        jFormattedTextField5.setText(null);
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
+       
+        buttonGroup1.clearSelection();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    }//GEN-LAST:event_jCheckBox8ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String Nome=jTextField1.getText();
+        String Data_de_Nascimento=jFormattedTextField5.getText();
+        String RG=jFormattedTextField3.getText();
+        String CPF=jFormattedTextField4.getText();
+        String Telefone=jFormattedTextField1.getText();
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+        String SexoAluno="";
+        if(jRadioButton1.isSelected()){
+            SexoAluno=jRadioButton1.getText();
+        }
+        if(jRadioButton2.isSelected()){
+            SexoAluno=jRadioButton2.getText();
+        }
+
+               try {
+            PreparedStatement ps =Conexao.ConexaoJDBC.prepareStatement
+            ("INSERT INTO cadastro_aluno VALUES (?,?,?,?,?,?,?)");
+            ps.setString(1, null);
+            ps.setString(2,Nome);
+            ps.setString(3,RG );
+            ps.setString(4,CPF );
+            ps.setString(5,SexoAluno );
+            ps.setString(6,Telefone );
+            ps.setString(7,Data_de_Nascimento );
+                       ps.execute();
+            JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso","Cadastro",JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this,"Erro ao cadastrar Aluno "+ ex.getMessage(),"ERRO",JOptionPane.ERROR_MESSAGE);
+        }
+        String Jump = jCheckBox8.getText();
+        String Step = jCheckBox7.getText();
+        String Danca = jCheckBox6.getText();
+        String Box = jCheckBox5.getText();
+        String Muay_Thai = jCheckBox4.getText();
+        String Natacao = jCheckBox3.getText();
+        String Hidroginastica = jCheckBox2.getText();
+        String Musculacao = jCheckBox1.getText();
+        String Spinning = jCheckBox10.getText();
+
+        try {
+            PreparedStatement ps =Conexao.ConexaoJDBC.prepareStatement
+            ("INSERT INTO atividades VALUES (?,?,?,?,?,?,?,?,?)");
+            ps.setString(1, Jump);
+            ps.setString(2,Step);
+            ps.setString(3,Danca );
+            ps.setString(4,Box );
+            ps.setString(5,Muay_Thai );
+            ps.setString(6,Natacao );
+            ps.setString(7,Hidroginastica );
+            ps.setString(8,Musculacao );
+            ps.setString(9,Spinning );
+            // ps.setString(10,null );
+
+            ps.execute();
+            
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this,"Erro ao cadastrar Aluno "+ ex.getMessage(),"ERRO",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jFormattedTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormattedTextField3ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
+
+    }//GEN-LAST:event_jCheckBox8ActionPerformed
+
+    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jCheckBox6ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-jTextField1.setText(null);        
- 
-jTextField6.setText(null);             
-txt_Altura.setText(null);        
-jCheckBox1.setSelected(false);
-jCheckBox2.setSelected(false);
-jCheckBox3.setSelected(false);
-jCheckBox4.setSelected(false);
-jCheckBox5.setSelected(false);
-jCheckBox6.setSelected(false);
-jCheckBox7.setSelected(false);
-jCheckBox8.setSelected(false);
-jCheckBox10.setSelected(false);
-jFormattedTextField4.setText(null);
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
-jFormattedTextField3.setText(null);
-jFormattedTextField5.setText(null);
-jRadioButton1.setSelected(false);
-jRadioButton2.setSelected(false);
-jLabel14.setText(null);
-buttonGroup1.clearSelection();
-
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-DecimalFormat dc = new DecimalFormat("##.#");
-        double altura = Double.valueOf(txt_Altura.getText());
-double peso = Double.valueOf(jTextField6.getText());
-double imc_altura = altura*altura ;
-double imc = peso / imc_altura;
-String imc2=dc.format(imc);
-jLabel14.setText(imc2);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      String Nome=jTextField1.getText();  
-      String Data_de_Nascimento=jFormattedTextField5.getText();  
-      String RG=jFormattedTextField3.getText();  
-      String CPF=jFormattedTextField4.getText();  
-      
-      String SexoAluno="";  
-      if(jRadioButton1.isSelected()){
-      SexoAluno=jRadioButton1.getText();
-      }
-      if(jRadioButton2.isSelected()){
-      SexoAluno=jRadioButton2.getText();
-      }
-   
-      String Altura= txt_Altura.getText();  
-      String Peso=jTextField6.getText();  
-      
-      try {  
-                PreparedStatement ps =Conexao.ConexaoJDBC.prepareStatement
-                        ("INSERT INTO cadastro_aluno VALUES (?,?,?,?,?,?,?,?)");
-                ps.setString(1, null);
-                ps.setString(2,Nome);
-                ps.setString(3,Data_de_Nascimento );
-                ps.setString(4,RG );
-                ps.setString(5,CPF );
-                ps.setString(6,SexoAluno );
-                ps.setString(7,Altura );
-                ps.setString(8,Peso );
-                ps.execute();
-                JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso","Cadastro",JOptionPane.INFORMATION_MESSAGE);
-                
-                
-                
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(this,"Erro ao cadastrar Aluno "+ ex.getMessage(),"ERRO",JOptionPane.ERROR_MESSAGE);
-            }
-      String Jump = jCheckBox8.getText();
-      String Step = jCheckBox7.getText();
-      String Danca = jCheckBox6.getText();
-      String Box = jCheckBox5.getText();
-      String Muay_Thai = jCheckBox4.getText();
-      String Natacao = jCheckBox3.getText();
-      String Hidroginastica = jCheckBox2.getText();
-      String Musculacao = jCheckBox1.getText();
-      String Spinning = jCheckBox10.getText();
-      
-       try {  
-                PreparedStatement ps =Conexao.ConexaoJDBC.prepareStatement
-                        ("INSERT INTO atividades VALUES (?,?,?,?,?,?,?,?,?)");
-                ps.setString(1, Jump);
-                ps.setString(2,Step);
-                ps.setString(3,Danca );
-                ps.setString(4,Box );
-                ps.setString(5,Muay_Thai );
-                ps.setString(6,Natacao );
-                ps.setString(7,Hidroginastica );
-                ps.setString(8,Musculacao );
-                ps.setString(9,Spinning );
-               // ps.setString(10,null );
-                
-                
-                ps.execute();
-                JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso","Cadastro",JOptionPane.INFORMATION_MESSAGE);
-                
-                
-                
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(this,"Erro ao cadastrar Aluno "+ ex.getMessage(),"ERRO",JOptionPane.ERROR_MESSAGE);
-            }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       new Academia().setVisible(true);
-       this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -560,7 +499,6 @@ jLabel14.setText(imc2);
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
     private javax.swing.JCheckBox jCheckBox2;
@@ -570,14 +508,12 @@ jLabel14.setText(imc2);
     private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JCheckBox jCheckBox8;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JFormattedTextField jFormattedTextField4;
     private javax.swing.JFormattedTextField jFormattedTextField5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -590,8 +526,5 @@ jLabel14.setText(imc2);
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField txt_Altura;
     // End of variables declaration//GEN-END:variables
 }
