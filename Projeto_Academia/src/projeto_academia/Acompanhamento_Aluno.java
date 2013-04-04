@@ -2,6 +2,7 @@ package projeto_academia;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -149,10 +150,11 @@ public class Acompanhamento_Aluno extends javax.swing.JFrame {
     DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
     model.setRowCount (0);
     String nome=Cx_Texto_Nome.getText();
-    String sql = "select *from cadastro_aluno"; //+
-            //"WHERE nome LIKE '%"+ nome+"%'";
+    String sql = "select *from cadastro_aluno"+
+            "WHERE lower(Nome) LIKE '%"+ nome+"%'";
     try {
-    ResultSet rs = Conexao.ConexaoJDBC.createStatement().executeQuery(sql);
+        Statement stmt =Conexao.ConexaoJDBC.createStatement();
+    ResultSet rs = stmt.executeQuery(sql);
         
             while (rs.next()) {
                 model.addRow(new Object[]{
