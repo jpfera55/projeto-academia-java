@@ -22,6 +22,7 @@ public class Acompanhamento_Aluno extends javax.swing.JFrame {
     /**
      * Creates new form Acompanhamento_Aluno
      */
+        
     public Acompanhamento_Aluno() throws ClassNotFoundException {
         initComponents();
         try {
@@ -127,7 +128,15 @@ public class Acompanhamento_Aluno extends javax.swing.JFrame {
             new String [] {
                 "Matrícula", "Nome", "Rg", "CPF", "Telefone", "Nascimento", "Atividades"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -166,7 +175,7 @@ public class Acompanhamento_Aluno extends javax.swing.JFrame {
     DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
     model.setRowCount (0);
    
-    String sql = "select * from cadastro_aluno";
+    String sql = "select * from cadastro_aluno where matricula ";
             //+
            // "WHERE lower(Nome) LIKE '%"+Cx_Texto_Nome.getText() +"%'";
     try {
@@ -198,6 +207,34 @@ new Academia().setVisible(true);
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        // colocar um JOptionPane perguntando "Tem certeza que deseja excluir o cadastro do Aluno?"
          //JOptionPane.showMessageDialog("Tem certeza que deseja excluir o cadstro do Aluno?");
+        String sql = "select * from cadastro_aluno where matricula ";
+        // int matriculaindex[]=new int[500];
+         int i = 1 ;
+    
+//        try {
+//        Statement stmt =Conexao.ConexaoJDBC.createStatement();
+//    ResultSet rs = stmt.executeQuery(sql);
+//       
+//       
+//            while (rs.next()) {
+//                
+//                  matriculaindex[i]=  rs.getInt("Matricula");
+//                    
+//                    
+//                    
+//               i++;
+//            }
+//        }catch(SQLException ex){JOptionPane.showMessageDialog(this,"Erro ao buscar indices "+ ex.getMessage());
+//        }
+         
+   jTable1.getValueAt(i,1 );
+               System.out.println( jTable1.getValueAt(i,0 ).toString());
+        String sqlDel="delete from cadastro_aluno where matricula ="+jTable1.getValueAt(i, 0);
+       try{
+        Conexao.ConexaoJDBC.createStatement().execute(sqlDel);
+       }catch(SQLException ex){
+       
+       }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
