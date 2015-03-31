@@ -1,0 +1,1 @@
+cadastrar alunos, bem como atualizar o status do cadastro, acompanhar o andamento da ficha, pagamentos de mensalidade, etc.
